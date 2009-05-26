@@ -1,0 +1,26 @@
+rgba2ppm is an image format converter that reads 32bit .rgba files (as created by ImageMagick) to 24bit .ppm files, for reading by encodedv
+
+Example:
+
+convert -resize 720x480! original-image.jpg resized-image.rgba
+
+rgba2ppm resized-image.rgba 720 480 > ./resized-image.ppm
+
+encodedv --input=ppm --audio-input=wav ./resized-image.ppm ./soundtrack.wav > output1.dv
+
+
+
+--
+
+Alternatively, you can just use ImageMagick convert so long as you use the "-depth 8" parameter,
+since encodedv requires 24bit .ppm files (with 8bit samples)
+
+convert -depth 8 -resize 720x480! original-image.jpg resized-image.ppm
+
+encodedv --input=ppm --audio-input=wav ./resized-image.ppm ./soundtrack.wav > output1.dv
+
+
+Getting started:
+autoreconf --force --install
+mkdir orb ; cd orb
+../configure ; make check
