@@ -1,4 +1,4 @@
-rgba2ppm is an image format converter that reads 32bit .rgba files (as created by ImageMagick) to 24bit .ppm files, for reading by encodedv
+rgba2ppm is an image format converter that reads 64bit .rgba files (as created by ImageMagick) to 24bit .ppm files, for reading by encodedv
 
 Example:
 
@@ -24,3 +24,9 @@ Getting started:
 autoreconf --force --install
 mkdir orb ; cd orb
 ../configure ; make check
+
+
+--
+
+Other ideas: consider adding .rgba and .png (via libpng) as inputs to encodedv
+
